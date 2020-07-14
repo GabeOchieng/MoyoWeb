@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+html{
+  font-size: 16px; /* 16px * 62.5 = 10px = 1 rem */
+  box-sizing: border-box;
+}
+body{
+ font: 1.6rem Helvetica;
+ margin:0;
+ background-image: linear-gradient(#B34BF5, #7D68F5,#6276F5);
+ background-repeat: no-repeat
+}
+#root{
+  height: 100%;
+}
+.form-control {
+  border-radius: 1.25rem !important;
+}
+.rounded-20{
+   border-radius: 20px !important;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgba(138, 97, 245,.45) !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(138, 97, 245,.45) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* grid */
+.grid-container{
+  display:grid;
+  height:100%; /*to cover the whole page*/
+  grid-template-areas:"header" "main" "footer";
+  grid-template-columns: 1fr; /* just one column*/
+  grid-template-rows: 5rem 1fr 7rem; /* three rows:header, main, footer*/
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.header{
+  grid-area:header;
+  display:flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid #fff;
+  padding: 2em;;
+}
+.brand a{
+  color:#fff;
+  font-size:1.5rem;
+  font-weight:bold;
+  text-decoration: none;
+
+}
+.brand a:hover{
+  color: #000;
+  text-decoration: none   
+}
+.header-links a{
+  color:#fff;
+  text-decoration: none;
+  padding:0 .5em
+
+}
+.header-links a:hover{
+  color:#fff;
+}
+.main{
+  grid-area:main;
+}
+.footer{
+  grid-area:footer;
+  color:#fff;
+ padding: 2em;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    
+}
+.ms-form{
+  border-radius:20px;
+  background-color: #F2ECEC;
+  margin-top:20px;
+}
+.ms-form-btn{
+  border-radius:10px;
+  padding:1em;
+  background-color: #5DB19B !important;
+  color: #fff !important;
+  margin:2em 0;
 }
 
-.App-link {
-  color: #61dafb;
+.social-icons .fab{
+  font-size:22px;
+  padding:0 .35em;
+  color:#fff
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* media queries */
+@media only screen and (max-width: 800px) {
+  .footer{
+    display:block
   }
-  to {
-    transform: rotate(360deg);
-  }
+  .footer > div{
+    margin:.5em
+  } 
 }
